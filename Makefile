@@ -1,12 +1,12 @@
-PY=python3
+PY=python
 PELICAN=pelican
-PELICANOPTS=
+PELICANOPTS= -t pelican-bootstrap3
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+CONFFILE=$(BASEDIR)/settings.py
+PUBLISHCONF=$(BASEDIR)/settings.py
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -103,8 +103,9 @@ cf_upload: publish
 
 github: publish
 ifeq ($(TRAVIS_PULL_REQUEST), false)
-	ghp-import -n $(OUTPUTDIR)
-	git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
+	ghp-import -n $(OUTPUTDIR) -b master
+	echo "Pushing Output"
+	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git master > /dev/null
 endif
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
