@@ -3,9 +3,9 @@ branches:
   only:
   - content
 install:
-  - pip install pelican ghp-import Markdown
+- pip install pelican ghp-import Markdown
 script:
-  - make publish github
+- make publish github
 env:
   global:
-    secure: V1bRyvEMu01lHJrwHU8ngvYFtAFYV/64E/kopVSHbQo8YIqlu6YGz1AP0WHee5vVl3QwRXlJJ3PnZdP1tt12ZiSHTahZWuuf5IFsFdgPXr0aKzA50ej/1XUzl5qhH5JXheiOZ0BIRH9fIPXUxd3kz3bjC1s2w2UfM9shWZmZlN8=
+    secure: f8eaxoBtrbXwmhCdG2xIfXy/RqrmQiSZKJeUwUKkHb+on2jYwzJbiRG5FnT1l4uCYWbLnfvdFk4IXPiaKwKB75f6yNJwDqC/ymEtLKDPRkEmVkdkCGNNfkRBNx5RUPbczit5YfiQpNLzT9dVUynLlWxstw/7X77jklahmWH/SRk=
