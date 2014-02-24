@@ -2,6 +2,8 @@ PY=python
 PELICAN=pelican
 PELICANOPTS= -t pelican-bootstrap3
 
+BRANCH=master
+
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
@@ -103,8 +105,8 @@ cf_upload: publish
 
 github: publish
 ifeq ($(TRAVIS_PULL_REQUEST), false)
-	ghp-import -n $(OUTPUTDIR) -b master
-	echo "Pushing Output to $(TRAVIS_REPO_SLUG)"
+	ghp-import -n $(OUTPUTDIR) -b $(BRANCH)
+	@echo "Pushing Output to $(TRAVIS_REPO_SLUG)"
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git master > /dev/null
 endif
 
