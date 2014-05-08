@@ -23,5 +23,11 @@ SOCIAL = (
     ("Twitter", "http://twitter.com/rypeck"),
 )
 
-STATIC_PATHS = ['images', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['images',
+                'extra/CNAME',
+                'extra/keybase.txt',
+               ]
+
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/keybase.txt': {'path': 'keybase.txt'},
+                      }
