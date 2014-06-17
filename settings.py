@@ -19,7 +19,7 @@ GITHUB_URL = "https://github.com/rypeck"
 
 SOCIAL = (
     ("LinkedIn", "https://www.linkedin.com/in/ryanjpeck"),
-    ("GitHub", "https://github.com/ryanjpeck"),
+    ("GitHub", "https://github.com/rypeck"),
     ("Twitter", "http://twitter.com/rypeck"),
 )
 
